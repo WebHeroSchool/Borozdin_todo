@@ -1,6 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 
+const word = 'Hello world!';
+const count = 20;
+
 function App() {
   return (
     <div className="App">
@@ -9,8 +12,15 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <p>Hello world!</p>
-        <p>Date: 10:11:2020</p>
+        <p style={{color:'blue', margin:0}}>
+          {word}
+        </p>
+        <p style={{margin:0}}>
+          {count}
+        </p>
+        <p style={{margin:0}}>
+           1 + 4 = {1 + 4}
+        </p>
         <a
           className="App-link"
           href="https://reactjs.org"
