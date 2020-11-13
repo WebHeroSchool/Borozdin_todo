@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import * as nums from './number';
 
 const word = 'Hello world!';
 const count = 7;
@@ -31,6 +32,12 @@ function App() {
            {null}
            {false}
            {true}
+        </p>
+        <p style={{margin:0}}>
+          nums.count =  {nums.count}, nums.length = {nums.length}
+        </p>
+        <p style={{margin:0}}>
+          count * length =  {nums.count * nums.length}
         </p>
         <a
           className="App-link"
