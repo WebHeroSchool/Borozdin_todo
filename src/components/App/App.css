@@ -1,0 +1,10 @@
+.todo {
+  margin: auto;
+  width:350px;
+}
+
+.todo__title {
+  font-family: Courier;
+  color: DarkGrey;
+  text-align: center;
+}
