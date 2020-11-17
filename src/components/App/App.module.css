@@ -1,9 +1,9 @@
-.todo {
+.wrap {
   margin: auto;
   width:350px;
 }
 
-.todo__title {
+.title {
   font-family: Courier;
   color: DarkGrey;
   text-align: center;
