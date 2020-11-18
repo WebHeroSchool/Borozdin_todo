@@ -2,7 +2,7 @@ import React from 'react';
 import ItemList from '../ItemList/ItemList';
 import InputItem from '../InputItem/InputItem';
 import Footer from '../Footer/Footer';
-import './App.css';
+import styles from './App.module.css';
 
 const App = () => {
   const items = [
@@ -12,8 +12,8 @@ const App = () => {
   ];
 
   return (
-    <div className = "todo">
-      <h1 className = "todo__title">todos</h1>
+    <div className = {styles.wrap}>
+      <h1 className = {styles.title}>todos</h1>
       <InputItem />
       <ItemList items={items} />
       <Footer count={3} />
