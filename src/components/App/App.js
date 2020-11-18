@@ -6,9 +6,18 @@ import styles from './App.module.css';
 
 const App = () => {
   const items = [
-    { value: 'Сделать завтрак'},
-    { value: 'Сделать тренировку'},
-    { value: 'Сходить в магазин'}
+    {
+      value: 'Сделать завтрак',
+      isDone: true
+    },
+    {
+      value: 'Сделать тренировку',
+      isDone: false
+    },
+    {
+      value: 'Сходить в магазин',
+      isDone: false
+    }
   ];
 
   return (
