@@ -23,9 +23,11 @@ const App = () => {
   return (
     <div className = {styles.wrap}>
       <h1 className = {styles.title}>todos</h1>
-      <InputItem />
-      <ItemList items={items} />
-      <Footer count={3} />
+      <div className = {styles.todoBody}>
+        <InputItem />
+        <ItemList items={items} />
+        <Footer count={3} />
+      </div>
     </div>
   );
 }
