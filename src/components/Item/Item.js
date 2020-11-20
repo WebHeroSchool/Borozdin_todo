@@ -4,13 +4,15 @@ import styles from './Item.module.css';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
-const Item =({ value, isDone }) => (<span className={
+const Item =({ value, isDone, onClickDone }) => (<span className={
   classnames({
     [styles.item]: true,
     [styles.done]: isDone
   })
 }>
-  <ListItemText primary={ value } />
+  <ListItem button onClick={() => onClickDone(isDone)} >
+    <ListItemText primary={ value } />
+  </ListItem>
 </span>);
 
 export default Item;
