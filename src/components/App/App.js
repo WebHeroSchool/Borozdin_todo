@@ -26,7 +26,7 @@ const App = () => {
       <div className = {styles.todoBody}>
         <InputItem />
         <ItemList items={items} />
-        <Footer count={3} />
+        <Footer count={items.length} />
       </div>
     </div>
   );
