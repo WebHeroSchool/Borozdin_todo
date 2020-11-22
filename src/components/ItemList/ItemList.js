@@ -6,7 +6,12 @@ import Divider from '@material-ui/core/Divider';
 
 const ItemList = ({ items, onClickDone }) => (<List component="nav" aria-label="todo-list">
   {items.map(item => (<li key={ item.value }>
-        <Item value={ item.value} isDone={ item.isDone } onClickDone={onClickDone} />
+        <Item
+          value={ item.value}
+          isDone={ item.isDone }
+          onClickDone={onClickDone}
+          id={item.id}
+        />
       </li>
     )
       )}

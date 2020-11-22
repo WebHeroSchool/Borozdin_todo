@@ -4,13 +4,13 @@ import styles from './Item.module.css';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
-const Item =({ value, isDone, onClickDone }) => (<span className={
+const Item =({ value, isDone, onClickDone, id }) => (<span className={
   classnames({
     [styles.item]: true,
     [styles.done]: isDone
   })
 }>
-  <ListItem button onClick={() => onClickDone(isDone)} >
+  <ListItem button onClick={() => onClickDone(id)} >
     <ListItemText primary={ value } />
   </ListItem>
 </span>);
