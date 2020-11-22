@@ -43,12 +43,7 @@ class App extends React.Component {
     const newItemList = this.state.items.filter (item => {
       const newItem = {...item};
 
-      if(item.id === id) {
-        return false;
-      }
-
-      return true;
-
+      return (item.id !== id);
     });
 
     this.setState({ items: newItemList})
