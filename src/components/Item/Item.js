@@ -7,7 +7,7 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
 
-const Item =({ value, isDone, onClickDone, id }) => (<span className={
+const Item =({ value, isDone, onClickDone, onClickDelete, id }) => (<span className={
   classnames({
     [styles.item]: true,
     [styles.done]: isDone
@@ -16,7 +16,7 @@ const Item =({ value, isDone, onClickDone, id }) => (<span className={
   <ListItem button onClick={() => onClickDone(id)} >
     <ListItemText primary={ value } />
     <ListItemSecondaryAction>
-      <IconButton edge="end" aria-label="delete">
+      <IconButton edge="end" aria-label="delete" onClick={() => onClickDelete(id)}>
         <DeleteIcon />
       </IconButton>
     </ListItemSecondaryAction>
