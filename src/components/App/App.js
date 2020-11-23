@@ -22,7 +22,8 @@ class App extends React.Component {
         isDone: false,
         id: 3
       }
-    ]
+    ],
+    count:3
   };
 
   onClickDone = id => {
@@ -44,12 +45,24 @@ class App extends React.Component {
     this.setState({ items: newItemList});
   };
 
+  onClickAdd = value => this.setState(state => ({
+    items: [
+      ...state.items,
+      {
+        value,
+        isDone: false,
+        id: state.count + 1
+      }
+    ],
+    count: state.count + 1
+  }));
+
   render() {
     return (
       <div className = {styles.wrap}>
         <h1 className = {styles.title}>todos</h1>
         <div className = {styles.todoBody}>
-          <InputItem />
+          <InputItem onClickAdd={this.onClickAdd} />
           <ItemList
             items={this.state.items}
             onClickDone={this.onClickDone}
