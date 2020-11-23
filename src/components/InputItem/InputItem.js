@@ -6,13 +6,19 @@ import AddIcon from '@material-ui/icons/Add';
 
 class InputItem extends React.Component {
   state = {
-    inputValue: ''
+    inputValue: '',
+    error: false,
+    helperText: ''
   };
 
   onButtonClick = () => {
     this.setState({inputValue: ''});
 
-    if (this.state.inputValue !== '') this.props.onClickAdd(this.state.inputValue);
+    if (this.state.inputValue !== '') {
+      this.props.onClickAdd(this.state.inputValue);
+    } else {
+      this.setState({error: true, helperText:'Заполните поле'});
+    };
   }
 
   render() {
@@ -22,9 +28,11 @@ class InputItem extends React.Component {
       <Grid container spacing={1} alignItems="flex-end">
         <Grid item xs>
           <TextField
+            error = {this.state.error}
             id="standard-basic"
             variant="standard"
             label="Добавить задание"
+            helperText={this.state.helperText}
             fullWidth
             InputLabelProps={{
               style: {
@@ -34,7 +42,7 @@ class InputItem extends React.Component {
             }}
             style={{paddingLeft:16}}
             value={this.state.inputValue}
-            onChange ={ event => this.setState({inputValue:event.target.value })}
+            onChange ={ event => this.setState({inputValue:event.target.value.toUpperCase(), error:false, helperText: '' })}
           />
         </Grid>
         <Grid item xs={2} style={{textAlign:"center", paddingLeft:30}}>
