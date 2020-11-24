@@ -23,4 +23,8 @@ const Item =({ value, isDone, onClickDone, onClickDelete, id }) => (<span classN
   </ListItem>
 </span>);
 
+Item.defaultProps = {
+  isDone: false
+};
+
 export default Item;
