@@ -2,6 +2,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import styles from './Footer.module.css';
+import PropTypes from 'prop-types';
 
 const Footer = ({ count }) => (
   <Grid container alignItems="center" spacing={1}>
@@ -18,5 +19,9 @@ const Footer = ({ count }) => (
     </Grid>
   </Grid>
 );
+
+Footer.propTypes ={
+  count: PropTypes.number.isRequired
+};
 
 export default Footer;
