@@ -1,8 +1,8 @@
 import React from 'react';
 import Item from '../Item/Item';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
+import PropTypes from 'prop-types';
 
 const ItemList = ({ items, onClickDone, onClickDelete }) => (<List component="nav" aria-label="todo-list">
   {items.map(item => (<li key={ item.id }>
@@ -18,5 +18,11 @@ const ItemList = ({ items, onClickDone, onClickDelete }) => (<List component="na
       )}
       <Divider />
 </List>);
+
+ItemList.propTypes ={
+  items: PropTypes.array.isRequired,
+  onClickDone: PropTypes.func.isRequired,
+  onClickDelete: PropTypes.func.isRequired
+};
 
 export default ItemList;
