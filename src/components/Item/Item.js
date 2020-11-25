@@ -32,4 +32,8 @@ Item.propTypes ={
   id:PropTypes.number.isRequired
 };
 
+Item.defaultProps = {
+  isDone: false
+};
+
 export default Item;

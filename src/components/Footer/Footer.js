@@ -24,4 +24,8 @@ Footer.propTypes ={
   count: PropTypes.number.isRequired
 };
 
+Footer.defaultProps = {
+  count:0
+};
+
 export default Footer;
