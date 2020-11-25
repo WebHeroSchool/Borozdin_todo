@@ -19,4 +19,8 @@ const Footer = ({ count }) => (
   </Grid>
 );
 
+Footer.defaultProps = {
+  count:0
+};
+
 export default Footer;
