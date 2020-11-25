@@ -8,21 +8,41 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
 import PropTypes from 'prop-types';
 
-const Item =({ value, isDone, onClickDone, onClickDelete, id }) => (<span className={
-  classnames({
-    [styles.item]: true,
-    [styles.done]: isDone
-  })
-}>
-  <ListItem button onClick={() => onClickDone(id)} >
-    <ListItemText primary={ value } />
-    <ListItemSecondaryAction>
-      <IconButton edge="end" aria-label="delete" onClick={() => onClickDelete(id)}>
-        <DeleteIcon />
-      </IconButton>
-    </ListItemSecondaryAction>
-  </ListItem>
-</span>);
+class Item extends React.Component {
+
+  componentDidMount() {
+    console.log('componentDidMount');
+  }
+
+  componentDidUpdate() {
+    console.log('componentDidUpdate');
+  }
+
+  componentWillUnmount() {
+    console.log('componentWillUnmount');
+  }
+
+  render() {
+    const { value, isDone, onClickDone, onClickDelete, id } = this.props;
+
+    return(
+      <span className={
+        classnames({
+          [styles.item]: true,
+          [styles.done]: isDone
+        })
+      }>
+        <ListItem button onClick={() => onClickDone(id)} >
+          <ListItemText primary={ value } />
+          <ListItemSecondaryAction>
+            <IconButton edge="end" aria-label="delete" onClick={() => onClickDelete(id)}>
+              <DeleteIcon />
+            </IconButton>
+          </ListItemSecondaryAction>
+        </ListItem>
+      </span>);
+  }
+}
 
 Item.propTypes ={
   value: PropTypes.string.isRequired,
