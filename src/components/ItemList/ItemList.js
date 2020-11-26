@@ -4,20 +4,20 @@ import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import PropTypes from 'prop-types';
 
-const ItemList = ({ items, onClickDone, onClickDelete }) => (<List component="nav" aria-label="todo-list">
-  {items.map(item => (<li key={ item.id }>
-        <Item
-          value={ item.value}
-          isDone={ item.isDone }
-          onClickDone={onClickDone}
-          onClickDelete={onClickDelete}
-          id={item.id}
-        />
-      </li>
-    )
-      )}
+const ItemList = ({ items, onClickDone, onClickDelete }) => (
+  <List component="nav" aria-label="todo-list">
+    {items.map(item => (
+      <Item
+        value={ item.value}
+        isDone={ item.isDone }
+        onClickDone={onClickDone}
+        onClickDelete={onClickDelete}
+        id={item.id}
+        key={ item.id }
+      />)
+    )}
       <Divider />
-</List>);
+  </List>);
 
 ItemList.propTypes ={
   items: PropTypes.array.isRequired,

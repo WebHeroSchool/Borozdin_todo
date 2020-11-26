@@ -45,7 +45,7 @@ class InputItem extends React.Component {
             onChange ={ event => this.setState({inputValue:event.target.value, error:false, helperText: '' })}
           />
         </Grid>
-        <Grid item xs={2} style={{textAlign:"center", paddingLeft:30}}>
+        <Grid item xs={2} style={{textAlign:"center", paddingLeft:40}}>
           <IconButton aria-label="add"
             color="primary"
             onClick={this.onButtonClick}

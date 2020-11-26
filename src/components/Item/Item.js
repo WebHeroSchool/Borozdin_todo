@@ -22,13 +22,13 @@ class Item extends React.Component {
     const { value, isDone, onClickDone, onClickDelete, id } = this.props;
 
     return(
-      <span className={
+      <div className={
         classnames({
           [styles.item]: true,
           [styles.done]: isDone
         })
       }>
-        <ListItem button onClick={() => onClickDone(id)} >
+        <ListItem button onClick={() => onClickDone(id)}>
           <ListItemText primary={ value } />
           <ListItemSecondaryAction>
             <IconButton edge="end" aria-label="delete" onClick={() => onClickDelete(id)}>
@@ -36,7 +36,7 @@ class Item extends React.Component {
             </IconButton>
           </ListItemSecondaryAction>
         </ListItem>
-      </span>);
+      </div>);
   }
 }
 
