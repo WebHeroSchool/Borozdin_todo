@@ -42,7 +42,7 @@ class InputItem extends React.Component {
             }}
             style={{paddingLeft:16}}
             value={this.state.inputValue}
-            onChange ={ event => this.setState({inputValue:event.target.value.toUpperCase(), error:false, helperText: '' })}
+            onChange ={ event => this.setState({inputValue:event.target.value, error:false, helperText: '' })}
           />
         </Grid>
         <Grid item xs={2} style={{textAlign:"center", paddingLeft:30}}>
