@@ -10,14 +10,28 @@ import Contacts from '../Contacts/Contacts';
 
 import styles from './App.module.css';
 
+const HOC = (Component) => {
+  return class extends React.Component {
+    render() {
+      return(
+        <Component {...this.props} className={styles.link}>
+          <MenuItem> {this.props.children} </MenuItem>
+        </Component>
+      )
+    }
+  }
+};
+
+const HOCLink = HOC(Link);
+
 const App = () =>  (
   <Router>
     <div className = {styles.wrap}>
       <Card className = {styles.sidebar}>
         <MenuList>
-          <Link to='/' className={styles.link}><MenuItem>Обо мне</MenuItem></Link>
-          <Link to='/todo' className={styles.link}><MenuItem>Дела</MenuItem></Link>
-          <Link to='/contacts' className={styles.link}><MenuItem>Контакты</MenuItem></Link>
+          <HOCLink to='/'>Обо мне</HOCLink>
+          <HOCLink to='/todo'>Дела</HOCLink>
+          <HOCLink to='/contacts'>Контакты</HOCLink>
         </MenuList>
       </Card>
       <Card className = {styles.content}>
