@@ -1,3 +1,8 @@
+.todoCard {
+  max-width: 700px;
+  height: 644px;
+}
+
 .title {
   font-family: Courier;
   color: #e5ddde;

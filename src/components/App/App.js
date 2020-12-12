@@ -1,44 +1,23 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
-import MenuItem from '@material-ui/core/MenuItem';
-import MenuList from '@material-ui/core/MenuList';
 
 import Todo from '../Todo/Todo';
 import About from '../About/About';
-import Contacts from '../Contacts/Contacts';
 
 import styles from './App.module.css';
-
-const HOC = (Component) => {
-  return class extends React.Component {
-    render() {
-      return(
-        <Component {...this.props} className={styles.link}>
-          <MenuItem> {this.props.children} </MenuItem>
-        </Component>
-      )
-    }
-  }
-};
-
-const HOCLink = HOC(Link);
 
 const App = () =>  (
   <Router>
     <div className = {styles.wrap}>
       <Card className = {styles.sidebar}>
-        <MenuList>
-          <HOCLink to='/'>Обо мне</HOCLink>
-          <HOCLink to='/todo'>Дела</HOCLink>
-          <HOCLink to='/contacts'>Контакты</HOCLink>
-        </MenuList>
+        <NavLink exact to='/' className={styles.link} activeClassName={styles.active_link}>Обо мне</NavLink>
+        <NavLink to='/todo' className={styles.link} activeClassName={styles.active_link}>Дела</NavLink>
       </Card>
-      <Card className = {styles.content}>
+      <div className = {styles.content}>
         <Route path='/' exact component={About} />
         <Route path='/todo' component={Todo} />
-        <Route path='/contacts' component={Contacts} />
-      </Card>
+      </div>
     </div>
   </Router>
 );

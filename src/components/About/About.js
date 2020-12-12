@@ -1,4 +1,5 @@
 import React from 'react';
+import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
 import Avatar from '@material-ui/core/Avatar';
@@ -62,33 +63,37 @@ class About extends React.Component {
     const { isLoading, repoList, fetchFailure, failure, userName, userAvatarUrl, userBio,  userUrl} = this.state;
 
     return (
-      <div style={{minWidth: 550}}>
-        { isLoading ? <ProgressBar /> : fetchFailure ?  <Typography variant="h5" component="h2">{failure}</Typography> :
+      <div>
+        { isLoading ? <Card><ProgressBar /></Card> : fetchFailure ?  <Card><Typography variant="h5" component="h2">{failure}</Typography></Card> :
           <div>
-            <CardHeader
-              avatar = {
-                <Avatar alt="Аватарка" src={userAvatarUrl}/>
-              }
-              title = {
-                <Link href={userUrl} color="inherit">
-                  {userName}
-                </Link>
-              }
-              subheader={userBio}
-            />
-            <CardContent style={{minWidth: 550}}>
-              <Typography variant="h6" component="h2">
-                Мои репозитории:
-              </Typography>
-              <List component="nav" aria-label="repositories-list">
-                {repoList.map(repo => (
-                  <Link href={repo.html_url} className={styles.link} color="inherit" key={repo.id}>
-                    <ListItem button>
-                      <ListItemText primary={repo.name} />
-                    </ListItem>
-                  </Link>))}
-              </List>
-            </CardContent>
+            <Card className={styles.userCard}>
+              <CardHeader
+                avatar = {
+                  <Avatar alt="Аватарка" src={userAvatarUrl}/>
+                }
+                title = {
+                  <Link href={userUrl} color="inherit">
+                    {userName}
+                  </Link>
+                }
+                subheader={userBio}
+              />
+            </Card>
+            <Card className={styles.repoCard}>
+              <CardContent>
+                <Typography variant="h6" component="h2">
+                  Мои репозитории:
+                </Typography>
+                <List component="nav" aria-label="repositories-list">
+                  {repoList.map(repo => (
+                    <Link href={repo.html_url} className={styles.link} color="inherit" key={repo.id}>
+                      <ListItem button>
+                        <ListItemText primary={repo.name} />
+                      </ListItem>
+                    </Link>))}
+                </List>
+              </CardContent>
+            </Card>
           </div>
         }
       </div>

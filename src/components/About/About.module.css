@@ -1,3 +1,14 @@
+.userCard{
+  margin-bottom: 14px;
+  max-width: 700px;
+  height: 200px;
+}
+
+.repoCard {
+  max-width: 700px;
+  height: 432px;
+}
+
 .link {
   text-decoration: none;
   color: black;
