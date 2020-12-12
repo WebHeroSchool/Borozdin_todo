@@ -2,6 +2,19 @@
   margin-bottom: 14px;
   max-width: 700px;
   height: 200px;
+  display: flex;
+  padding: 12px;
+}
+
+.wrap .userCard {
+  border-radius: 9px;
+}
+
+.userAvatar {
+  height:100%;
+  width: 150px;
+  border-radius: 9px;
+  margin-right: 16px;
 }
 
 .repoCard {
@@ -12,4 +25,30 @@
 .link {
   text-decoration: none;
   color: black;
+}
+
+.userInfo .userInfoTitle {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.userInfo .userBio {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.userInfo .emailLink, .userInfo .telegramlLink {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 9px;
+}
+
+.emailLink .emailImage, .telegramlLink .telegramImage {
+  padding-right: 4px;
+  font-size: 14px;
+}
+
+.emailLink:hover, .telegramlLink:hover {
+  color: #356EFF;
 }
