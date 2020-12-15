@@ -6,7 +6,7 @@
   padding: 12px;
 }
 
-.wrap .userCard {
+.wrap .userCard, .wrap .repoCard {
   border-radius: 9px;
 }
 
@@ -17,14 +17,8 @@
   margin-right: 16px;
 }
 
-.repoCard {
-  max-width: 700px;
-  height: 432px;
-}
-
-.link {
-  text-decoration: none;
-  color: black;
+.userInfo {
+  flex-grow: 1;
 }
 
 .userInfo .userInfoTitle {
@@ -49,6 +43,136 @@
   font-size: 14px;
 }
 
-.emailLink:hover, .telegramlLink:hover {
+.emailLink:hover, .telegramlLink:hover, .socialNetworkLink:hover {
   color: #356EFF;
+}
+
+.userInfo .telegramlLink {
+  margin-bottom: 40px;
+}
+
+.socialNetwork {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.socialNetworkLogo {
+  font-size: 24px;
+  padding-right: 8px;
+}
+
+.repoCard {
+  max-width: 700px;
+  height: 432px;
+  padding: 8px 14px 0 14px;
+}
+
+.repoCard .repositoriesWrap {
+  padding-bottom: 0;
+}
+
+.repoList {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.repoList .repolink {
+  text-decoration: none;
+  color: black;
+}
+
+.repository {
+  border: 1px solid #CCC;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  padding: 6px 12px;
+  height: 54px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.repoName {
+  margin: 0;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
+}
+
+.repoInfo{
+  display: flex;
+}
+
+.repoLanguage {
+  display: flex;
+  align-items: center;
+  width: 85px;
+}
+
+.repoLanguageIcon {
+  height: 16px;
+  width: 16px;
+  background-color: #696969;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+.repolanguage_null {
+  background-color:#696969;
+}
+
+.repolanguage_html {
+  background-color: #e34c26;
+}
+
+.repolanguage_css {
+  background-color: #0094FF;
+}
+
+.repolanguage_javascript {
+  background-color: #FFC700;
+}
+
+.repolanguage_typescript {
+  background-color: #2b7489;
+}
+
+.repoStar {
+  display: flex;
+  align-items: center;
+  width: 45px;
+}
+
+.repoText {
+  margin: 0;
+  font-size: 12px;
+  line-height: 14px;
+  color: #999;
+}
+
+.repoStarIcon {
+  font-size: 15px;
+  padding-right: 4px;
+}
+
+.repoForks {
+  display: flex;
+  width: 41px;
+}
+
+.repoForksIcon {
+  height: 15px;
+  padding-right: 6px;
+}
+
+.buttonWrap {
+  justify-content: center;
+}
+
+.buttonWrap .button {
+  border-radius: 37px;
+  font-weight: 400;
+  text-transform: inherit;
 }
