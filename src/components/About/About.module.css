@@ -1,3 +1,42 @@
+.errorCard {
+  display: flex;
+}
+
+.errorWrap, .repoNone {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.repoNone {
+  margin-top: 62px;
+}
+
+.errorImg, .repoNoneImg {
+  margin-bottom: 25px;
+}
+
+.errorTitle, .repoNoneTitle {
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  font-weight: normal;
+  margin: 0 0 8px 0;
+}
+
+.errorText, .repoNoneText {
+  color: #999;
+  text-align: center;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  margin: 0;
+}
+
+.errorRefresh, .repoNoneLink {
+  color: #356EFF;
+}
+
 .userCard{
   margin-bottom: 14px;
   max-width: 700px;
