@@ -1,10 +1,32 @@
 .todoCard {
   max-width: 700px;
   height: 644px;
+  padding: 16px;
+}
+
+.todoCardHeader {
+  display: flex;
+  padding: 16px;
+  justify-content: space-between;
 }
 
 .title {
-  font-family: Courier;
-  color: #e5ddde;
-  text-align: center;
+  margin: 0;
+}
+
+.todoCount, .completedAffair {
+  display: flex;
+}
+
+.completedAffairText {
+  font-size: 12px;
+  line-height: 14px;
+  margin: 0;
+}
+
+.completedAffairNuber {
+  font-size: 12px;
+  line-height: 14px;
+  color: #356EFF;
+  width: 30px;
 }

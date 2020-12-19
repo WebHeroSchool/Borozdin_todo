@@ -3,9 +3,14 @@ import classnames from 'classnames';
 import styles from './Item.module.css';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import DeleteIcon from '@material-ui/icons/Delete';
+import CancelIcon from '@material-ui/icons/Cancel';
 import IconButton from '@material-ui/core/IconButton';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import PropTypes from 'prop-types';
 
 class Item extends React.Component {
@@ -28,11 +33,18 @@ class Item extends React.Component {
           [styles.done]: isDone
         })
       }>
-        <ListItem button onClick={() => onClickDone(id)}>
-          <ListItemText primary={ value } />
+        <ListItem className={styles.itemWrap}>
+          <Checkbox
+            icon={<RadioButtonUncheckedIcon color="primary" fontSize="small"/>}
+            checkedIcon={<CheckCircleIcon color="primary" fontSize="small"/>}
+            color="primary"
+            onClick={() => onClickDone(id)}
+            checked={isDone}
+          />
+          <ListItemText primary={ value } className={styles.itemText}/>
           <ListItemSecondaryAction>
             <IconButton edge="end" aria-label="delete" onClick={() => onClickDelete(id)}>
-              <DeleteIcon />
+              <CancelIcon fontSize="small"/>
             </IconButton>
           </ListItemSecondaryAction>
         </ListItem>

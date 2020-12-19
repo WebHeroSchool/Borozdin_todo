@@ -1,8 +1,20 @@
 .item {
   color: #333;
+  border: 1px solid #CCC;
+  box-sizing: border-box;
+  border-radius: 41px;
+  margin-bottom: 8px;
 }
 
 .done {
   text-decoration: line-through;
   color: #c4c4c4;
+}
+
+.item .itemWrap{
+  padding: 0 48px 0 4px;
+}
+
+.itemText {
+  padding-left: 0;
 }

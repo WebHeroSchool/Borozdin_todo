@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CardContent from '@material-ui/core/CardContent';
 import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
 
 import ItemList from '../ItemList/ItemList';
 import InputItem from '../InputItem/InputItem';
@@ -84,16 +85,28 @@ const Todo = () => {
   };
 
   return (
-    <Card className={styles.todoCard}>
+    <Card className={styles.todoCard} style={{borderRadius: 9}}>
+      <div className={styles.todoCardHeader}>
+        <h3 className = {styles.title}>Список моих дел</h3>
+        <div className = {styles.todoCount}>
+          <div className={styles.completedAffair}>
+            <p className={styles.completedAffairText}>Завершенные</p>
+            <div className={styles.completedAffairNuber}>12</div>
+          </div>
+          <div className={styles.completedAffair}>
+            <p className={styles.completedAffairText}>Незавершенные</p>
+            <div className={styles.completedAffairNuber}>12</div>
+          </div>
+          <p className={styles.completedAffairText}>Все</p>
+        </div>
+      </div>
       <CardContent style={{paddingBottom: 8}}>
-        <h1 className = {styles.title}>todos</h1>
-        <InputItem onClickAdd={onClickAdd} />
         <ItemList
           items={items}
           onClickDone={onClickDone}
           onClickDelete={onClickDelete}
         />
-        <Footer count={count} />
+        <InputItem onClickAdd={onClickAdd} />
       </CardContent>
     </Card>
   );
