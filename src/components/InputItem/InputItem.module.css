@@ -1,0 +1,11 @@
+.inputWrap {
+  display: flex;
+}
+
+.inputWrap .inputText {
+  flex-grow: 1;
+  margin-right: 8px;
+  /* border: 1px solid #CCC;
+  border-radius: 29px;
+  box-sizing: border-box; */
+}

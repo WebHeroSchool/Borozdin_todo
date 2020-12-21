@@ -2,6 +2,8 @@
   max-width: 700px;
   height: 644px;
   padding: 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 .todoCardHeader {
@@ -29,4 +31,15 @@
   line-height: 14px;
   color: #356EFF;
   width: 30px;
+}
+
+.todoCardBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.todoCard .todoCardBody:last-child {
+  padding-bottom: 16px;
 }

@@ -100,7 +100,7 @@ const Todo = () => {
           <p className={styles.completedAffairText}>Все</p>
         </div>
       </div>
-      <CardContent style={{paddingBottom: 8}}>
+      <CardContent className={styles.todoCardBody}>
         <ItemList
           items={items}
           onClickDone={onClickDone}
