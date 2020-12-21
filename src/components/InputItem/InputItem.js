@@ -15,11 +15,14 @@ class InputItem extends React.Component {
 
   onButtonClick = () => {
     this.setState({inputValue: ''});
-
-    if (this.state.inputValue !== '') {
-      this.props.onClickAdd(this.state.inputValue);
-    } else {
+    const isHave = item => item.value === this.state.inputValue;
+    
+    if (this.state.inputValue === '') {
       this.setState({error: true, helperText:'Заполните поле'});
+    } else if (this.props.items.some(isHave)) {
+      this.setState({error: true, helperText:'Такая задача уже есть в вашем списке. Введите другое название'});
+    } else {
+      this.props.onClickAdd(this.state.inputValue);
     };
   }
 
@@ -35,6 +38,9 @@ class InputItem extends React.Component {
           size="small"
           placeholder="Просто введите сюда название дела..."
           helperText={this.state.helperText}
+          InputProps={{
+            style:{borderRadius:29}
+          }}
           InputLabelProps={{
             style: {
               marginLeft: 32,

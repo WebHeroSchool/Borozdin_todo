@@ -16,10 +16,6 @@ body {
   box-shadow: none;
 }
 
-.content {
-  /* grid-area: content; */
-}
-
 .wrap {
   display: flex;
   flex-direction: column;

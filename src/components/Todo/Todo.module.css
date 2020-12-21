@@ -43,3 +43,32 @@
 .todoCard .todoCardBody:last-child {
   padding-bottom: 16px;
 }
+
+.emptyListWrap {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+
+.emptyListImg {
+  margin-bottom: 25px;
+}
+
+.emptyListTitle {
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  font-weight: normal;
+  margin: 0 0 8px 0;
+}
+
+.emptyListText {
+  color: #999;
+  text-align: center;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  margin: 0;
+}
