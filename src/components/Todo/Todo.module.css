@@ -16,21 +16,38 @@
   margin: 0;
 }
 
-.todoCount, .completedAffair {
+.todoCountWrap {
   display: flex;
+  width: 270px;
+  justify-content: space-between;
 }
 
-.completedAffairText {
+.todoCount {
   font-size: 12px;
   line-height: 14px;
   margin: 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  padding: 3px 8px;
 }
 
-.completedAffairNuber {
+.todoCountNuber {
   font-size: 12px;
   line-height: 14px;
   color: #356EFF;
-  width: 30px;
+}
+
+.todoCountActive {
+  background-color: #356EFF;
+  color: white;
+  border: none;
+  border-radius: 23px;
+}
+
+.todoCountNuberActive {
+  color: white;
 }
 
 .todoCardBody {
