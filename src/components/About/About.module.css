@@ -149,6 +149,7 @@
 
 .repoInfo{
   display: flex;
+  align-items: center;
 }
 
 .repoLanguage {
@@ -267,6 +268,10 @@
     padding-right: 5px;
   }
 
+  .repoCard {
+    height:295px;
+  }
+
   .repoCard .repositoriesWrap {
     padding: 0;
   }
@@ -278,13 +283,18 @@
     margin-bottom: 6px;
   }
 
+  .repository {
+    padding: 4px 5px;
+    height: 40px;
+  }
+
   .repoName {
     font-size: 12px;
     line-height: 14px;
   }
 
   .repoLanguage {
-    width: 75px;
+    width: 65px;
   }
 
   .repoLanguageIcon {
@@ -297,4 +307,55 @@
     font-size: 10px;
     line-height: 12px;
   }
+
+  .repoStar {
+    width: 30px;
+  }
+
+  .repoStarIcon {
+    font-size: 13px;
+    padding-right: 2px;
+  }
+
+  .repoForks {
+    width: 30px;
+  }
+
+  .repoForksIcon {
+    padding-right: 2px;
+    width: 14px;
+    height: 13px;
+  }
+
+  .repoCard .buttonWrap {
+    padding-top: 0;
+  }
+
+  .buttonWrap .button {
+    font-size: 12px;
+    line-height: 14px;
+    padding: 3px 8px;
+  }
+
+  .errorImg, .repoNoneImg {
+    width: 200px;
+    height: 123px;
+    margin: 0 auto 10px auto;
+  }
+
+  .errorTitle, .repoNoneTitle {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 5px;
+  }
+
+  .errorText, .repoNoneText {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .repoNone {
+    margin-top: 35px;
+  }
+
 }
