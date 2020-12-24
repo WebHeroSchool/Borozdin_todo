@@ -1,9 +1,10 @@
 .item {
   color: #333;
-  border: 1px solid #CCC;
+  /* border: 1px solid #CCC;
   box-sizing: border-box;
-  border-radius: 41px;
+  border-radius: 41px; */
   margin-bottom: 8px;
+  cursor: pointer;
 }
 
 .done {
@@ -13,8 +14,44 @@
 
 .item .itemWrap{
   padding: 0 48px 0 4px;
+  border: 1px solid #CCC;
+  box-sizing: border-box;
+  border-radius: 41px;
+}
+
+.item:focus {
+  background-color: #999;
 }
 
 .itemText {
   padding-left: 0;
+}
+
+.deleteButtonVisible {
+  visibility: hidden;
+}
+
+.itemWrap:focus .deleteButton {
+  visibility: visible;
+}
+
+@media screen and (min-width:320px) and (max-width: 520px) {
+
+  .item .itemWrap{
+    height: 30px;
+    padding: 0 35px 0 0;
+  }
+
+  .itemWrap .checkbox {
+    padding: 5px;
+  }
+
+  .itemText span {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .deleteButtonWrap .deleteButton {
+    padding: 5px;
+  }
 }

@@ -95,20 +95,22 @@ class About extends React.Component {
               >
               </CardMedia>
               <CardContent className={styles.userInfo}>
-                <Typography variant="h6" component="h2" className={styles.userInfoTitle}>
-                  {User.name}
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p" className={styles.userBio}>
-                  {User.bio}
-                </Typography>
-                <Link href="mailto: borozdin1@yandex.ru" color="textSecondary" className={styles.emailLink} underline="none">
-                  <AlternateEmailIcon fontSize="small" className={styles.emailImage}/>
-                  borozdin1@yandex.ru
-                </Link>
-                <Link href="tg://resolve?domain=DmBorozdin" color="textSecondary" className={styles.telegramlLink} underline="none">
-                  <TelegramIcon fontSize="small" className={styles.telegramImage}/>
-                  +7 923 228 77 91
-                </Link>
+                <div className={styles.userInfoWrap}>
+                  <Typography variant="h6" component="h2" className={styles.userInfoTitle}>
+                    {User.name}
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary" component="p" className={styles.userBio}>
+                    {User.bio}
+                  </Typography>
+                  <Link href="mailto: borozdin1@yandex.ru" color="textSecondary" className={styles.emailLink} underline="none">
+                    <AlternateEmailIcon fontSize="small" className={styles.emailImage}/>
+                    borozdin1@yandex.ru
+                  </Link>
+                  <Link href="tg://resolve?domain=DmBorozdin" color="textSecondary" className={styles.telegramlLink} underline="none">
+                    <TelegramIcon fontSize="small" className={styles.telegramImage}/>
+                    +7 923 228 77 91
+                  </Link>
+                </div>
                 <div className={styles.socialNetwork}>
                   <Link href={User.html_url} color="textSecondary" underline="none" className={styles.socialNetworkLink}>
                     <ion-icon name="logo-github" class={styles.socialNetworkLogo}></ion-icon>
@@ -124,7 +126,7 @@ class About extends React.Component {
             </Card>
             <Card className={styles.repoCard}>
               <CardContent className={styles.repositoriesWrap}>
-                <Typography variant="h6" component="h2">
+                <Typography variant="h6" component="h2" className={styles.repositoriesTitle}>
                   Репозитории на GitHub.com:
                 </Typography>
                 {repoList.length>0 && <ul className={styles.repoList}>

@@ -58,19 +58,26 @@
 
 .userInfo {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.userInfo .userInfoTitle {
+.wrap .userInfo:last-child {
+  padding-bottom: 0;
+}
+
+.userInfoWrap .userInfoTitle {
   font-weight: bold;
   font-size: 28px;
 }
 
-.userInfo .userBio {
+.userInfoWrap .userBio {
   font-size: 14px;
   margin-bottom: 12px;
 }
 
-.userInfo .emailLink, .userInfo .telegramlLink {
+.userInfoWrap .emailLink, .userInfoWrap .telegramlLink {
   font-size: 12px;
   display: flex;
   align-items: center;
@@ -86,8 +93,8 @@
   color: #356EFF;
 }
 
-.userInfo .telegramlLink {
-  margin-bottom: 40px;
+.userInfoWrap .telegramlLink {
+  margin-bottom: 0;
 }
 
 .socialNetwork {
@@ -214,4 +221,80 @@
   border-radius: 37px;
   font-weight: 400;
   text-transform: inherit;
+}
+
+@media screen and (min-width:320px) and (max-width: 520px) {
+
+  .userCard {
+    height: 133px;
+  }
+
+  .userAvatar {
+    width: 100px;
+    margin-right: 8px;
+  }
+
+  .wrap .userInfo:last-child {
+    padding: 10px 0 0 0;
+  }
+
+  .userInfoWrap .userInfoTitle {
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 8px;
+  }
+
+  .userInfoWrap .userBio, .userInfoWrap .emailLink, .userInfoWrap .telegramlLink {
+    font-size: 10px;
+    line-height: 12px;
+    margin-bottom: 8px;
+  }
+
+  .userInfoWrap .emailLink {
+    margin-bottom: 4px;
+  }
+
+  .userInfoWrap .telegramlLink {
+    margin-bottom: 0;
+  }
+
+  .socialNetwork {
+    justify-content: flex-start;
+  }
+
+  .socialNetworkLogo {
+    font-size: 18px;
+    padding-right: 5px;
+  }
+
+  .repoCard .repositoriesWrap {
+    padding: 0;
+  }
+
+  .repositoriesWrap .repositoriesTitle {
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+
+  .repoName {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .repoLanguage {
+    width: 75px;
+  }
+
+  .repoLanguageIcon {
+    height: 12px;
+    width: 12px;
+    margin-right: 2px;
+  }
+
+  .repoText {
+    font-size: 10px;
+    line-height: 12px;
+  }
 }

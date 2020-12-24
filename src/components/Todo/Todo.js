@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import CardContent from '@material-ui/core/CardContent';
 import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
 
 import ItemList from '../ItemList/ItemList';
 import InputItem from '../InputItem/InputItem';
-import Footer from '../Footer/Footer';
 import styles from './Todo.module.css';
 import classnames from 'classnames';
 
@@ -35,7 +33,8 @@ const Todo = () => {
     count:3,
     lastID:3,
     countActive:2,
-    countDone:1
+    countDone:1,
+    selectedId:-1
   };
 
 
@@ -47,30 +46,19 @@ const Todo = () => {
   const [lastID, setLastId] = useState (initialState.lastID);
   const [countActive, setCountActive] = useState (initialState.countActive);
   const [countDone, setCountDone] = useState (initialState.countDone);
-
-
-
-  useEffect(() => {
-    console.log("update");
-    console.log(items);
-    console.log("count:" + count);
-    console.log("lastID:" + lastID);
-    console.log("countDone:" + countDone);
-    console.log("itemsFilter:" + itemsFilter);
-  });
+  const [selectedId, setselectedId] = useState (initialState.selectedId);
 
   useEffect(() => {
-    console.log("mount");
      setItemsFilter(items);
   }, []);
 
   useEffect(() => {
-    console.log("count change");
-  }, [count]);
-
-  useEffect(() => {
     onClickFilter(filter);
   }, [items]);
+
+  useEffect(() => {
+    onClickSelected(-1);
+  }, [filter]);
 
   const onClickDone = id => {
     const newItemList = items.map (item=> {
@@ -100,6 +88,8 @@ const Todo = () => {
     setCountDone(newCountDone.length);
     setCountActive(newCountActive.length);
   };
+
+  const onClickSelected = id => setselectedId(id);
 
   const onClickAdd = value => {
     const newItem = [
@@ -157,6 +147,8 @@ const Todo = () => {
             items={itemsFilter}
             onClickDone={onClickDone}
             onClickDelete={onClickDelete}
+            onClickSelected={onClickSelected}
+            selectedId={selectedId}
           /> :
           <div className={styles.emptyListWrap}>
             <img src={errorImg} alt='Ошибка загрузки' className={styles.emptyListImg}></img>

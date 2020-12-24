@@ -31,12 +31,14 @@
   border: none;
   padding: 0;
   padding: 3px 8px;
+  outline: none;
 }
 
 .todoCountNuber {
   font-size: 12px;
   line-height: 14px;
   color: #356EFF;
+  box-sizing: border-box;
 }
 
 .todoCountActive {
@@ -88,4 +90,59 @@
   font-size: 14px;
   line-height: 16px;
   margin: 0;
+}
+
+@media screen and (min-width:320px) and (max-width: 520px) {
+
+  .todoCard {
+    height: 470px;
+  }
+
+  .todoCard .todoCardHeader {
+    padding: 0;
+  }
+
+  .todoCard .todoCardBody {
+    padding: 0;
+  }
+
+  .todoCard .todoCardBody:last-child {
+    padding-bottom: 0;
+  }
+
+  .todoCardHeader {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title {
+    padding-bottom: 5px;
+  }
+
+  .todoCountWrap {
+    padding-bottom: 8px;
+    justify-content: center;
+  }
+
+  .todoCount, .todoCountNuber {
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .emptyListTitle {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 5px;
+  }
+
+  .emptyListText {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .emptyListImg {
+    width: 200px;
+    height: 123px;
+    margin: 0 auto 10px auto;
+  }
 }

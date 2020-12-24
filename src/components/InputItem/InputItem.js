@@ -16,7 +16,7 @@ class InputItem extends React.Component {
   onButtonClick = () => {
     this.setState({inputValue: ''});
     const isHave = item => item.value === this.state.inputValue;
-    
+
     if (this.state.inputValue === '') {
       this.setState({error: true, helperText:'Заполните поле'});
     } else if (this.props.items.some(isHave)) {
@@ -55,6 +55,7 @@ class InputItem extends React.Component {
           color="primary"
           size="small"
           onClick={this.onButtonClick}
+          className={styles.buttonAdd}
         >
           <AddIcon />
         </Fab>
