@@ -1,0 +1,11 @@
+.list {
+  overflow-y: auto;
+  height: 480px;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width:320px) and (max-width: 520px) {
+  .list {
+    height: 380px;
+  }
+}

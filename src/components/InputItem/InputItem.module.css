@@ -1,0 +1,26 @@
+.inputWrap {
+  display: flex;
+}
+
+.inputWrap .inputText {
+  flex-grow: 1;
+  margin-right: 8px;
+}
+
+@media screen and (min-width:320px) and (max-width: 520px) {
+  .inputWrap .buttonAdd {
+    width: 30px;
+    height: 30px;
+    min-height: 30px;
+  }
+
+  .inputText div {
+    height: 30px;
+  }
+
+  .inputText div input {
+    font-size: 12px;
+    line-height: 14px;
+    padding: 6px 8px;
+  }
+}

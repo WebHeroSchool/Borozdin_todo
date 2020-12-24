@@ -1,4 +1,361 @@
-.link {
+.errorCard {
+  display: flex;
+}
+
+.errorWrap, .repoNone {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.repoNone {
+  margin-top: 62px;
+}
+
+.errorImg, .repoNoneImg {
+  margin-bottom: 25px;
+}
+
+.errorTitle, .repoNoneTitle {
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  font-weight: normal;
+  margin: 0 0 8px 0;
+}
+
+.errorText, .repoNoneText {
+  color: #999;
+  text-align: center;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  margin: 0;
+}
+
+.errorRefresh, .repoNoneLink {
+  color: #356EFF;
+}
+
+.userCard{
+  margin-bottom: 14px;
+  max-width: 700px;
+  height: 200px;
+  display: flex;
+  padding: 12px;
+}
+
+.wrap .userCard, .wrap .repoCard {
+  border-radius: 9px;
+}
+
+.userAvatar {
+  height:100%;
+  width: 150px;
+  border-radius: 9px;
+  margin-right: 16px;
+}
+
+.userInfo {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wrap .userInfo:last-child {
+  padding-bottom: 0;
+}
+
+.userInfoWrap .userInfoTitle {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.userInfoWrap .userBio {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.userInfoWrap .emailLink, .userInfoWrap .telegramlLink {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 9px;
+}
+
+.emailLink .emailImage, .telegramlLink .telegramImage {
+  padding-right: 4px;
+  font-size: 14px;
+}
+
+.emailLink:hover, .telegramlLink:hover, .socialNetworkLink:hover {
+  color: #356EFF;
+}
+
+.userInfoWrap .telegramlLink {
+  margin-bottom: 0;
+}
+
+.socialNetwork {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.socialNetworkLogo {
+  font-size: 24px;
+  padding-right: 8px;
+}
+
+.repoCard {
+  max-width: 700px;
+  height: 432px;
+  padding: 8px 14px 0 14px;
+}
+
+.repoCard .repositoriesWrap {
+  padding-bottom: 0;
+}
+
+.repoList {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.repoList .repolink {
   text-decoration: none;
   color: black;
+}
+
+.repository {
+  border: 1px solid #CCC;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  padding: 6px 12px;
+  height: 54px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.repoName {
+  margin: 0;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
+}
+
+.repoInfo{
+  display: flex;
+  align-items: center;
+}
+
+.repoLanguage {
+  display: flex;
+  align-items: center;
+  width: 85px;
+}
+
+.repoLanguageIcon {
+  height: 16px;
+  width: 16px;
+  background-color: #696969;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+.repolanguage_null {
+  background-color:#696969;
+}
+
+.repolanguage_html {
+  background-color: #e34c26;
+}
+
+.repolanguage_css {
+  background-color: #0094FF;
+}
+
+.repolanguage_javascript {
+  background-color: #FFC700;
+}
+
+.repolanguage_typescript {
+  background-color: #2b7489;
+}
+
+.repoStar {
+  display: flex;
+  align-items: center;
+  width: 45px;
+}
+
+.repoText {
+  margin: 0;
+  font-size: 12px;
+  line-height: 14px;
+  color: #999;
+}
+
+.repoStarIcon {
+  font-size: 15px;
+  padding-right: 4px;
+}
+
+.repoForks {
+  display: flex;
+  width: 41px;
+}
+
+.repoForksIcon {
+  height: 15px;
+  padding-right: 6px;
+}
+
+.buttonWrap {
+  justify-content: center;
+}
+
+.buttonWrap .button {
+  border-radius: 37px;
+  font-weight: 400;
+  text-transform: inherit;
+}
+
+@media screen and (min-width:320px) and (max-width: 520px) {
+
+  .userCard {
+    height: 133px;
+  }
+
+  .userAvatar {
+    width: 100px;
+    margin-right: 8px;
+  }
+
+  .wrap .userInfo:last-child {
+    padding: 10px 0 0 0;
+  }
+
+  .userInfoWrap .userInfoTitle {
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 8px;
+  }
+
+  .userInfoWrap .userBio, .userInfoWrap .emailLink, .userInfoWrap .telegramlLink {
+    font-size: 10px;
+    line-height: 12px;
+    margin-bottom: 8px;
+  }
+
+  .userInfoWrap .emailLink {
+    margin-bottom: 4px;
+  }
+
+  .userInfoWrap .telegramlLink {
+    margin-bottom: 0;
+  }
+
+  .socialNetwork {
+    justify-content: flex-start;
+  }
+
+  .socialNetworkLogo {
+    font-size: 18px;
+    padding-right: 5px;
+  }
+
+  .repoCard {
+    height:295px;
+  }
+
+  .repoCard .repositoriesWrap {
+    padding: 0;
+  }
+
+  .repositoriesWrap .repositoriesTitle {
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+
+  .repository {
+    padding: 4px 5px;
+    height: 40px;
+  }
+
+  .repoName {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .repoLanguage {
+    width: 65px;
+  }
+
+  .repoLanguageIcon {
+    height: 12px;
+    width: 12px;
+    margin-right: 2px;
+  }
+
+  .repoText {
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .repoStar {
+    width: 30px;
+  }
+
+  .repoStarIcon {
+    font-size: 13px;
+    padding-right: 2px;
+  }
+
+  .repoForks {
+    width: 30px;
+  }
+
+  .repoForksIcon {
+    padding-right: 2px;
+    width: 14px;
+    height: 13px;
+  }
+
+  .repoCard .buttonWrap {
+    padding-top: 0;
+  }
+
+  .buttonWrap .button {
+    font-size: 12px;
+    line-height: 14px;
+    padding: 3px 8px;
+  }
+
+  .errorImg, .repoNoneImg {
+    width: 200px;
+    height: 123px;
+    margin: 0 auto 10px auto;
+  }
+
+  .errorTitle, .repoNoneTitle {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 5px;
+  }
+
+  .errorText, .repoNoneText {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .repoNone {
+    margin-top: 35px;
+  }
+
 }

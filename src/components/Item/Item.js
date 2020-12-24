@@ -4,22 +4,17 @@ import styles from './Item.module.css';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import DeleteIcon from '@material-ui/icons/Delete';
+import CancelIcon from '@material-ui/icons/Cancel';
 import IconButton from '@material-ui/core/IconButton';
+import Checkbox from '@material-ui/core/Checkbox';
+import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import PropTypes from 'prop-types';
 
 class Item extends React.Component {
 
-  // componentDidMount() {
-  //   this.timerId = setInterval(() => console.log('interval'),1000);
-  // }
-  //
-  // componentWillUnmount() {
-  //   clearInterval(this.timerId);
-  // }
-
   render() {
-    const { value, isDone, onClickDone, onClickDelete, id } = this.props;
+    const { value, isDone, onClickDone, onClickDelete, id, onClickSelected, selectedId } = this.props;
 
     return(
       <div className={
@@ -28,11 +23,24 @@ class Item extends React.Component {
           [styles.done]: isDone
         })
       }>
-        <ListItem button onClick={() => onClickDone(id)}>
-          <ListItemText primary={ value } />
-          <ListItemSecondaryAction>
-            <IconButton edge="end" aria-label="delete" onClick={() => onClickDelete(id)}>
-              <DeleteIcon />
+        <ListItem className={styles.itemWrap} onClick={() => onClickSelected(id)} selected={selectedId===id}>
+          <Checkbox
+            icon={<RadioButtonUncheckedIcon color="primary" fontSize="small"/>}
+            checkedIcon={<CheckCircleIcon color="primary" fontSize="small"/>}
+            color="primary"
+            onClick={() => onClickDone(id)}
+            checked={isDone}
+            className={styles.checkbox}
+          />
+          <ListItemText primary={ value } className={styles.itemText}/>
+          <ListItemSecondaryAction className={styles.deleteButtonWrap}>
+            <IconButton
+              edge="end"
+              aria-label="delete"
+              onClick={() => onClickDelete(id)}
+              className={classnames({[styles.deleteButtonVisible]: selectedId !== id, [styles.deleteButton]:true})}
+            >
+              <CancelIcon fontSize="small"/>
             </IconButton>
           </ListItemSecondaryAction>
         </ListItem>

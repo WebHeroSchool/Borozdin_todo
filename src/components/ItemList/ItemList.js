@@ -1,11 +1,12 @@
 import React from 'react';
 import Item from '../Item/Item';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
 import PropTypes from 'prop-types';
 
-const ItemList = ({ items, onClickDone, onClickDelete }) => (
-  <List component="nav" aria-label="todo-list">
+import styles from './ItemList.module.css';
+
+const ItemList = ({ items, onClickDone, onClickDelete, onClickSelected, selectedId }) => (
+  <List component="ul" aria-label="todo-list" className={styles.list} style={{padding:0}}>
     {items.map(item => (
       <Item
         value={ item.value}
@@ -13,10 +14,11 @@ const ItemList = ({ items, onClickDone, onClickDelete }) => (
         onClickDone={onClickDone}
         onClickDelete={onClickDelete}
         id={item.id}
+        onClickSelected={onClickSelected}
+        selectedId={selectedId}
         key={ item.id }
       />)
     )}
-      <Divider />
   </List>);
 
 ItemList.propTypes ={
