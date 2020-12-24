@@ -22,7 +22,7 @@ class About extends React.Component {
     repoList: [],
     fetchFailure: false,
     failure: '',
-    userName: 'DmBorozdin',
+    userName:  'DmBorozdin',
     User: [],
     firstRepo: 0,
     lastRepo: 5
