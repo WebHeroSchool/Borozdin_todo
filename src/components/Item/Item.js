@@ -32,7 +32,7 @@ class Item extends React.Component {
             checked={isDone}
             className={styles.checkbox}
           />
-          <ListItemText primary={ value } className={styles.itemText}/>
+          <ListItemText primary={value} className={styles.itemText}/>
           <ListItemSecondaryAction className={styles.deleteButtonWrap}>
             <IconButton
               edge="end"

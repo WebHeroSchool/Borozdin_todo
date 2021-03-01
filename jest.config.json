@@ -1,0 +1,11 @@
+{
+  "setupFilesAfterEnv": ["./src/setupTests.js"],
+  "coverageThreshold": {
+    "global": {
+      "branches":100,
+      "functions":100,
+      "lines" :100
+    }
+  },
+  "collectCoverage": true
+}
